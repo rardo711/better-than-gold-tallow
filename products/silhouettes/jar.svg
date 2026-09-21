@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" role="img" aria-hidden="true">
+  <rect width="200" height="200" fill="#faf5ec"/>
+  <ellipse cx="100" cy="168" rx="48" ry="6" fill="#e9d9b8" opacity=".55"/>
+  <rect x="70" y="42" width="60" height="14" rx="3" fill="#e9d9b8" stroke="#a5772a" stroke-width="1.5"/>
+  <path d="M78 56h44v10c0 2-1 4-3 4H81c-2 0-3-2-3-4V56z" fill="#f3ead9" stroke="#a5772a" stroke-width="1.25"/>
+  <path d="M62 72c0-4 3-8 8-8h60c5 0 8 4 8 8v78c0 10-8 18-18 18H80c-10 0-18-8-18-18V72z" fill="#fffdf8" stroke="#a5772a" stroke-width="1.75"/>
+  <path d="M70 96h60" stroke="#e9d9b8" stroke-width="1"/>
+  <path d="M78 118h44" stroke="#e4d6bd" stroke-width="1" stroke-dasharray="3 4"/>
+  <circle cx="100" cy="140" r="10" fill="none" stroke="#e9d9b8" stroke-width="1.25"/>
+  <text x="100" y="144" text-anchor="middle" font-family="Georgia, serif" font-size="7" fill="#a5772a" letter-spacing="1">BTG</text>
+</svg>
