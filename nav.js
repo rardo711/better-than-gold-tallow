@@ -103,20 +103,32 @@
 })();
 
 /* Partner marquee — replace the placeholders with Sarah Beth's real partner business names */
-const PARTNER_NAMES = ["Grit & Grace", "The Farmhouse", "The Studio House", "Salt & Light Bakery", "The Market by Dent Farms"];
+const PARTNERS = [
+  { name: "Grit & Grace", town: "Glennville" },
+  { name: "The Farmhouse", town: "Glennville" },
+  { name: "The Studio House", town: "Reidsville" },
+  { name: "Salt & Light Bakery", town: "Vidalia, GA" },
+  { name: "The Market by Dent Farms", town: "Jesup, GA" }
+];
 (function buildPartnerMarquee() {
   const track = document.getElementById("partnerTrack");
-  if (!track || !PARTNER_NAMES.length) return;
-  const units = PARTNER_NAMES.map((n) => {
+  if (!track || !PARTNERS.length) return;
+  const units = PARTNERS.map((p) => {
     const u = document.createElement("span");
     u.className = "mq-unit";
+    const place = document.createElement("span");
+    place.className = "mq-place";
     const name = document.createElement("span");
     name.className = "mq-name";
-    name.textContent = n;
+    name.textContent = p.name;
+    const town = document.createElement("span");
+    town.className = "mq-town";
+    town.textContent = p.town;
+    place.append(name, town);
     const dot = document.createElement("span");
     dot.className = "mq-dot";
     dot.textContent = "\u2022";
-    u.append(name, dot);
+    u.append(place, dot);
     return u;
   });
   track.append(...units, ...units.map((u) => u.cloneNode(true)));
