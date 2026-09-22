@@ -1248,3 +1248,20 @@ body.menu-open {
   color: var(--gold-deep);
   font-weight: 600;
 }
+
+/* Real-logo monogram watermark (faint gold, white knocked out via multiply) */
+.hero-watermark-img {
+  width: clamp(18rem, 55vw, 30rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+}
+
+/* Sprig section divider echoing the logo's wreath */
+.sprig-divider {
+  display: block;
+  width: min(22rem, 80vw);
+  height: auto;
+  margin-inline: auto;
+}
