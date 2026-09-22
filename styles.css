@@ -1132,3 +1132,119 @@ body.menu-open {
   border-radius: 50%;
   object-fit: cover;
 }
+
+/* Contact form */
+.contact-form-wrap[hidden] {
+  display: none;
+}
+.contact-form {
+  margin: 1.75rem auto 0;
+  max-width: 26rem;
+  text-align: left;
+  display: grid;
+  gap: 1rem;
+}
+.field-row {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 560px) {
+  .field-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.field > span,
+.field-type legend {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.field em {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+.field-type {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.field input,
+.field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+.field input:focus,
+.field textarea:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+  border-color: var(--gold);
+}
+.field textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+.pill-row {
+  display: flex;
+  gap: 0.75rem;
+}
+.pill {
+  position: relative;
+}
+.pill input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.pill span {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--gold);
+  color: var(--gold-deep);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 150ms var(--ease-out), color 150ms var(--ease-out);
+}
+.pill input:checked + span {
+  background: var(--gold);
+  color: var(--paper);
+}
+.pill input:focus-visible + span {
+  outline: 2px solid var(--gold-deep);
+  outline-offset: 2px;
+}
+.contact-form .btn {
+  justify-self: center;
+}
+.form-note {
+  margin: 0;
+  min-height: 1.25em;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.form-note.ok {
+  color: var(--gold-deep);
+  font-weight: 600;
+}
+.fb-alt {
+  margin: 1.25rem 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.fb-alt a {
+  color: var(--gold-deep);
+  font-weight: 600;
+}
