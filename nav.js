@@ -101,3 +101,23 @@
       });
   });
 })();
+
+/* Partner marquee — replace the placeholders with Sarah Beth's real partner business names */
+const PARTNER_NAMES = ["Partner Name", "Partner Name", "Partner Name", "Partner Name"];
+(function buildPartnerMarquee() {
+  const track = document.getElementById("partnerTrack");
+  if (!track || !PARTNER_NAMES.length) return;
+  const units = PARTNER_NAMES.map((n) => {
+    const u = document.createElement("span");
+    u.className = "mq-unit";
+    const name = document.createElement("span");
+    name.className = "mq-name";
+    name.textContent = n;
+    const dot = document.createElement("span");
+    dot.className = "mq-dot";
+    dot.textContent = "\u2726";
+    u.append(name, dot);
+    return u;
+  });
+  track.append(...units, ...units.map((u) => u.cloneNode(true)));
+})();
