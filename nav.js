@@ -103,7 +103,7 @@
 })();
 
 /* Partner marquee — replace the placeholders with Sarah Beth's real partner business names */
-const PARTNER_NAMES = ["Partner Name", "Partner Name", "Partner Name", "Partner Name"];
+const PARTNER_NAMES = ["Grit & Grace", "The Farmhouse", "The Studio House", "Salt & Light Bakery", "The Market by Dent Farms"];
 (function buildPartnerMarquee() {
   const track = document.getElementById("partnerTrack");
   if (!track || !PARTNER_NAMES.length) return;
@@ -115,7 +115,7 @@ const PARTNER_NAMES = ["Partner Name", "Partner Name", "Partner Name", "Partner 
     name.textContent = n;
     const dot = document.createElement("span");
     dot.className = "mq-dot";
-    dot.textContent = "\u2726";
+    dot.textContent = "\u2022";
     u.append(name, dot);
     return u;
   });
