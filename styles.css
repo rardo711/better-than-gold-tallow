@@ -35,9 +35,8 @@ html {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation: none !important;
+    transition: none !important;
   }
 }
 
@@ -236,6 +235,11 @@ a {
   border-radius: 999px;
   background: transparent;
   color: var(--ink-soft);
+  transition: transform 150ms var(--ease-out), color 150ms var(--ease-out);
+}
+
+.nav-toggle:active {
+  transform: scale(0.9);
 }
 
 .nav-toggle:hover {
@@ -249,10 +253,45 @@ a {
   border-top: 1px solid var(--line);
   background: var(--paper);
   padding: 0.75rem 1.25rem 1rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    opacity 280ms var(--ease-out),
+    transform 280ms var(--ease-out),
+    display 280ms allow-discrete;
 }
 
 .mobile-nav.open {
   display: flex;
+  opacity: 1;
+  transform: none;
+}
+
+@starting-style {
+  .mobile-nav.open {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Staggered link entrance — restarts every time the menu opens */
+.mobile-nav.open a {
+  animation: menu-in 380ms var(--ease-out) both;
+}
+.mobile-nav.open a:nth-child(1) { animation-delay: 60ms; }
+.mobile-nav.open a:nth-child(2) { animation-delay: 120ms; }
+.mobile-nav.open a:nth-child(3) { animation-delay: 180ms; }
+.mobile-nav.open a:nth-child(4) { animation-delay: 240ms; }
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .mobile-nav a:not(.btn) {
@@ -443,6 +482,18 @@ a {
   pointer-events: none;
   user-select: none;
   line-height: 1;
+  animation: watermark-drift linear both;
+  animation-timeline: scroll();
+  animation-range: 0 90svh;
+}
+
+@keyframes watermark-drift {
+  from {
+    transform: translate(-50%, -50%);
+  }
+  to {
+    transform: translate(-50%, calc(-50% + 56px));
+  }
 }
 
 @media (max-width: 640px) {
@@ -1001,6 +1052,8 @@ a {
 
 .stagger > * {
   animation: rise 800ms var(--ease-out) both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 55%;
 }
 .stagger > *:nth-child(1) {
   animation-delay: 40ms;
@@ -1019,4 +1072,55 @@ a {
 }
 .stagger > *:nth-child(6) {
   animation-delay: 390ms;
+}
+
+/* ---- Scroll progress — thin gold fill pinned to the viewport top ---- */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold-shine));
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  animation: scroll-progress linear both;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* ---- Menu scrim — soft dim behind the open mobile menu ---- */
+.nav-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: color-mix(in oklab, var(--ink) 32%, transparent);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 300ms var(--ease-out),
+    visibility 300ms allow-discrete;
+}
+
+.nav-scrim.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@starting-style {
+  .nav-scrim.show {
+    opacity: 0;
+  }
+}
+
+/* Lock background scroll while the menu is open */
+body.menu-open {
+  overflow: hidden;
 }
