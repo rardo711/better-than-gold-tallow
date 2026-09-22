@@ -733,7 +733,7 @@ a {
 }
 
 .letter-card {
-  background-color: var(--paper);
+  background: transparent;
   max-width: 560px;
   margin: 0 auto;
   padding: 3rem 2.25rem;
@@ -754,8 +754,13 @@ a {
   text-wrap: balance;
 }
 
-.letter-card .brand-mark {
+.letter-card .contact-logo {
+  display: block;
+  width: 5rem;
+  height: 5rem;
   margin: 0 auto 1rem;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .letter-copy {
