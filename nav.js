@@ -29,3 +29,75 @@
     if (e.key === "Escape" && nav.classList.contains("open")) setOpen(false);
   });
 })();
+
+(function () {
+  // Contact form wiring. Paste Sarah Beth's email below when she's ready;
+  // until then the form shows a "not connected yet" note on submit.
+  var CONTACT_EMAIL = "";
+
+  var toggle = document.getElementById("contact-toggle");
+  var wrap = document.getElementById("contact-form-wrap");
+  if (toggle && wrap) {
+    toggle.addEventListener("click", function () {
+      var opening = wrap.hasAttribute("hidden");
+      if (opening) {
+        wrap.removeAttribute("hidden");
+      } else {
+        wrap.setAttribute("hidden", "");
+      }
+      toggle.setAttribute("aria-expanded", opening ? "true" : "false");
+      toggle.textContent = opening ? "Close" : "Contact us";
+    });
+  }
+
+  var form = document.getElementById("contact-form");
+  if (!form) return;
+  var note = form.querySelector(".form-note");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    var typeEl = form.querySelector('input[name="customer_type"]:checked');
+    var customerType = typeEl ? typeEl.value : "";
+    if (!CONTACT_EMAIL) {
+      note.textContent =
+        "Thanks for reaching out! Our inbox is being connected \u2014 please message us on Facebook for now.";
+      note.classList.remove("ok");
+      return;
+    }
+    var btn = form.querySelector('[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = "Sending\u2026";
+    var payload = {
+      name: form.elements.name.value.trim(),
+      email: form.elements.email.value.trim(),
+      phone: form.elements.phone.value.trim(),
+      customer_type: customerType,
+      message: form.elements.message.value.trim(),
+      _subject: "New website inquiry (" + customerType + ")"
+    };
+    fetch("https://formsubmit.co/ajax/" + encodeURIComponent(CONTACT_EMAIL), {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload)
+    })
+      .then(function (r) { return r.json(); })
+      .then(function () {
+        note.textContent = "Thanks \u2014 your message is on its way! We\u2019ll be in touch soon.";
+        note.classList.add("ok");
+        form.reset();
+      })
+      .catch(function () {
+        note.textContent =
+          "Something went wrong sending that \u2014 please message us on Facebook instead.";
+        note.classList.remove("ok");
+      })
+      .then(function () {
+        btn.disabled = false;
+        btn.textContent = "Send message";
+      });
+  });
+})();

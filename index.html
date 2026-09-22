@@ -108,12 +108,28 @@
           <span class="brand-mark brand-mark-lg" aria-hidden="true"><img src="brand/logo.jpg" alt=""></span>
           <p class="eyebrow">Get in touch</p>
           <h2>We&rsquo;d love to hear from you</h2>
-          <p class="letter-copy">Questions about a product, or ready to place an order? Message us on Facebook and we&rsquo;ll take care of you.</p>
-          <a class="btn btn-gold btn-lg" href="https://www.facebook.com/share/1DVY5gSKAP/" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg>
-            Message Better Than Gold
-          </a>
-          <p class="trust-line">Usually reply same day</p>
+          <p class="letter-copy">Questions about a product, or ready to place an order? Send us a note and we&rsquo;ll take care of you.</p>
+          <button class="btn btn-gold btn-lg" type="button" id="contact-toggle" aria-expanded="false" aria-controls="contact-form-wrap">Contact us</button>
+          <div class="contact-form-wrap" id="contact-form-wrap" hidden>
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="field-row">
+                <label class="field"><span>Name</span><input type="text" name="name" required autocomplete="name" placeholder="Your name"></label>
+                <label class="field"><span>Email</span><input type="email" name="email" required autocomplete="email" placeholder="you@example.com"></label>
+              </div>
+              <label class="field"><span>Phone <em>(optional)</em></span><input type="tel" name="phone" autocomplete="tel" placeholder="Your phone number"></label>
+              <fieldset class="field field-type">
+                <legend>I&rsquo;m reaching out as a&hellip;</legend>
+                <div class="pill-row">
+                  <label class="pill"><input type="radio" name="customer_type" value="Consumer" checked><span>Consumer</span></label>
+                  <label class="pill"><input type="radio" name="customer_type" value="Business"><span>Business</span></label>
+                </div>
+              </fieldset>
+              <label class="field"><span>Message</span><textarea name="message" rows="4" required placeholder="What can we help you with?"></textarea></label>
+              <button class="btn btn-gold btn-lg" type="submit">Send message</button>
+              <p class="form-note" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+          <p class="fb-alt">Prefer Facebook? <a href="https://www.facebook.com/share/1DVY5gSKAP/" target="_blank" rel="noopener noreferrer">Message us here</a>.</p>
         </div>
       </section>
     </main>
