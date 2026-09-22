@@ -1258,10 +1258,3 @@ body.menu-open {
   mix-blend-mode: multiply;
 }
 
-/* Sprig section divider echoing the logo's wreath */
-.sprig-divider {
-  display: block;
-  width: min(22rem, 80vw);
-  height: auto;
-  margin-inline: auto;
-}
