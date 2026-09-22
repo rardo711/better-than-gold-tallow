@@ -173,34 +173,23 @@ a {
   color: var(--ink-soft);
 }
 
-.brand-mark {
-  display: inline-flex;
+.logo-circle {
+  display: block;
   flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid var(--gold);
-  border-radius: 999px;
-  background: var(--paper);
-  color: var(--gold-deep);
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  border-radius: 50%;
+  object-fit: cover;
 }
-
-.brand-mark-sm {
+.logo-circle-sm {
   width: 3.5rem;
   height: 3.5rem;
-  font-size: 1.125rem;
 }
-.brand-mark-md {
+.logo-circle-md {
   width: 4rem;
   height: 4rem;
-  font-size: 1.25rem;
 }
-.brand-mark-lg {
+.logo-circle-lg {
   width: 5rem;
   height: 5rem;
-  font-size: 1.5rem;
 }
 
 .desktop-nav {
@@ -754,13 +743,8 @@ a {
   text-wrap: balance;
 }
 
-.letter-card .contact-logo {
-  display: block;
-  width: 5rem;
-  height: 5rem;
+.letter-card .logo-circle {
   margin: 0 auto 1rem;
-  border-radius: 50%;
-  object-fit: cover;
 }
 
 .letter-copy {
@@ -1022,7 +1006,7 @@ a {
   text-align: center;
 }
 
-.site-footer .brand-mark {
+.site-footer .logo-circle {
   margin: 0 auto 0.75rem;
 }
 
@@ -1141,14 +1125,6 @@ body::before {
 /* Lock background scroll while the menu is open */
 body.menu-open {
   overflow: hidden;
-}
-
-.brand-mark img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
 }
 
 /* Contact form */
