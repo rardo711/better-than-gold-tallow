@@ -104,9 +104,9 @@
 
 /* Partner marquee — replace the placeholders with Sarah Beth's real partner business names */
 const PARTNERS = [
-  { name: "Grit & Grace", town: "Glennville" },
-  { name: "The Farmhouse", town: "Glennville" },
-  { name: "The Studio House", town: "Reidsville" },
+  { name: "Grit & Grace", town: "Glennville, GA" },
+  { name: "The Farmhouse", town: "Glennville, GA" },
+  { name: "The Studio House", town: "Reidsville, GA" },
   { name: "Salt & Light Bakery", town: "Vidalia, GA" },
   { name: "The Market by Dent Farms", town: "Jesup, GA" }
 ];
