@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Better Than Gold Tallow Co.</title>
+  <title>Design Preview — Better Than Gold Tallow Co.</title>
   <meta name="description" content="Handmade beef tallow cosmetics from our family farm in Southeast Georgia. Balms, scrubs & more — rooted in faith. Find us in Glennville, Jesup, Reidsville & Vidalia, plus shipping.">
   <meta name="theme-color" content="#a5772a">
   <link rel="icon" type="image/png" href="brand/favicon.png">
@@ -12,11 +12,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="preview.css">
 </head>
 <body>
+  <div class="preview-banner" role="note">Design preview &mdash; the live site is unchanged. <a href="https://better-than-gold-tallow.vercel.app/">Back to the live site</a></div>
   <div class="site-shell" id="top">
     <div class="gold-bar" aria-hidden="true"></div>
-    <header class="site-header">
+<header class="site-header">
       <div class="header-inner">
         <a class="brand" href="./">
           <span class="brand-mark brand-mark-sm" aria-hidden="true"><img src="brand/logo.jpg" alt=""></span>
@@ -44,67 +46,78 @@
     </header>
 
     <main>
-      <section class="intro-hero">
+      <section class="statement-hero">
         <img class="hero-watermark hero-watermark-img" src="brand/logo.jpg" alt="" aria-hidden="true">
-        <p class="eyebrow intro-kicker rise rise-2">Get to know</p>
-        <h1 class="intro-title rise rise-3">Better Than Gold Tallow Co.</h1>
-        <p class="intro-script rise rise-4">Beef tallow cosmetics, rooted in faith</p>
+        <p class="eyebrow rise rise-2">Better Than Gold Tallow Co.</p>
+        <h1 class="statement-title rise rise-3">Beef tallow cosmetics,<br><em>rooted in faith.</em></h1>
         <p class="lede rise rise-4">Suet tallow from our family farm in Southeast Georgia, crafted into soothing balms, scrubs, and handmade self-care goods.</p>
         <div class="hero-actions rise rise-5">
           <a class="btn btn-gold btn-lg" href="products/">Enter the shop</a>
-          <a class="btn btn-outline btn-lg" href="#story">Our story</a>
+          <a class="btn btn-outline btn-lg" href="#heritage">Our heritage</a>
         </div>
-        <a class="bob" href="#story" aria-label="Scroll to our story">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-        </a>
       </section>
 
-
-      <section id="story" class="section">
+      <section class="section cat-section">
         <div class="narrow">
-          <p class="eyebrow">Our story</p>
-          <h2>From the farm, for your everyday</h2>
-          <img class="gold-divider divider-space" src="textures/divider.jpg" alt="" aria-hidden="true">
+          <p class="eyebrow">Our collections</p>
+          <h2>What we make</h2>
+          <div class="cat-grid">
+            <a class="cat-card stagger" href="products/">
+              <img src="products/silhouettes/jar.svg" alt="" aria-hidden="true">
+              <h3>Balms &amp; Salves</h3>
+              <p class="cat-names">Suet Tallow Stick &middot; Honey Tallow Balm &middot; Whipped Tallow Balm</p>
+              <p class="cat-blurb">Everyday moisture for dry skin, in stick, jar, and whipped form.</p>
+            </a>
+            <a class="cat-card stagger" href="products/">
+              <img src="products/silhouettes/sunscreen.svg" alt="" aria-hidden="true">
+              <h3>Sun &amp; Lip Care</h3>
+              <p class="cat-names">Tallow Mineral Sunscreen &middot; Tallow Lip Balm</p>
+              <p class="cat-blurb">Mineral sun protection and lip care that soothes and shields.</p>
+            </a>
+            <a class="cat-card stagger" href="products/">
+              <img src="products/silhouettes/scrub.svg" alt="" aria-hidden="true">
+              <h3>Bath &amp; Body</h3>
+              <p class="cat-names">Tallow Sugar Scrub</p>
+              <p class="cat-blurb">A sweet exfoliant that leaves skin smooth and radiant.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="heritage" class="section heritage">
+        <div class="narrow">
+          <p class="eyebrow">Our heritage</p>
+          <blockquote class="pull-quote">&ldquo;From the farm, for your everyday.&rdquo;</blockquote>
           <p class="story-copy">Founded by <strong>Sarah Beth Boyett</strong>, Better Than Gold Tallow Co. exists to translate God&rsquo;s faithful handiwork into reality through soothing balms, scrubs and other handmade self care items to enhance your everyday.</p>
           <p class="story-copy">Born and raised on her family&rsquo;s farm in South Georgia <strong>(where she sources her homemade beef tallow)</strong>, Sarah Beth founded BTG in light of a season of unexpected personal trials that God used as fertilizer to display His power, purpose and kindness.</p>
         </div>
       </section>
 
-      <section id="find-us" class="section find-us">
-        <div class="narrow" style="max-width: 680px">
-          <p class="eyebrow">Find us</p>
-          <h2>Shop local, or we&rsquo;ll ship it</h2>
-          <p class="find-copy">You can find our products at shop locations in these towns — and we ship, too.</p>
-          <ul class="towns stagger">
-            <li>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=Glennville%2C+GA" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                Glennville
-              </a>
-            </li>
-            <li>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=Jesup%2C+GA" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                Jesup
-              </a>
-            </li>
-            <li>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=Reidsville%2C+GA" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                Reidsville
-              </a>
-            </li>
-            <li>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=Vidalia%2C+GA" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                Vidalia
-              </a>
-            </li>
-          </ul>
-          <p class="shipping">Plus shipping — wherever you are.</p>
+      <section class="section spotlight">
+        <div class="narrow">
+          <div class="spotlight-frame stagger">
+            <p class="eyebrow">Featured</p>
+            <img class="spotlight-img" src="products/silhouettes/stick.svg" alt="" aria-hidden="true">
+            <h2>Suet Tallow Stick</h2>
+            <p class="spotlight-blurb">A jack-of-all-trades balm for minor skin cuts &mdash; or a base for cooking.</p>
+            <a class="btn btn-gold btn-lg" href="products/">See it in the shop</a>
+          </div>
         </div>
       </section>
 
+      <section class="section stockists">
+        <div class="narrow">
+          <p class="eyebrow">Stocked with care</p>
+          <h2>Find us in these towns</h2>
+          <ul class="towns">
+            <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Glennville%2C+GA" target="_blank" rel="noopener noreferrer">Glennville</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Jesup%2C+GA" target="_blank" rel="noopener noreferrer">Jesup</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Reidsville%2C+GA" target="_blank" rel="noopener noreferrer">Reidsville</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Vidalia%2C+GA" target="_blank" rel="noopener noreferrer">Vidalia</a></li>
+          </ul>
+          <p class="shipping">Plus shipping &mdash; wherever you are.</p>
+        </div>
+      </section>
 
       <section id="contact" class="section">
         <div class="letter-card">
@@ -135,6 +148,7 @@
           <p class="fb-alt">Prefer Facebook? <a href="https://www.facebook.com/share/1DVY5gSKAP/" target="_blank" rel="noopener noreferrer">Message us here</a>.</p>
         </div>
       </section>
+
     </main>
 
     <footer class="site-footer">
